@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: ease 0.15s;
 }
 
 ul li {
@@ -22,10 +23,19 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.8125rem;
+}
+
 /* shared styles */
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 8px;
 }
 
 .flex {
@@ -53,15 +63,124 @@ a {
 }
 .btn-primary {
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   padding: 1.25rem 1.625rem;
   background: #ff900e;
   color: #fff;
   font-size: 1.25rem;
   font-weight: 600;
-  transition: ease 0.15s;
 }
 
 .btn-primary:hover {
   background: #c56d09;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.common-title {
+  max-width: 560px;
+}
+
+.common-title p {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* header styles */
+.header {
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.125rem 0;
+}
+
+nav {
+  gap: 3rem;
+}
+
+nav a {
+  color: #424242;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #ff900e;
+}
+
+/* banner styles */
+.banner-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.banner-content p {
+  margin: 1.5rem 0 2.125rem;
+}
+
+.banner-img {
+  padding: 3.125rem 0;
+}
+
+.banner-img img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* media queries */
+/* mobile devices */
+
+@media screen and (max-width: 449.99px) {
+  :root {
+    font-size: 12px;
+  }
+  .header {
+    flex-direction: column;
+    padding: 2.5rem 0 1.5rem;
+  }
+  .header h3 {
+    margin-bottom: 3rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  .btn-primary {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 575.99px) {
+  :root {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.125rem;
+  }
+  .header {
+    flex-direction: column;
+    padding: 2.5rem 0 1.5rem;
+  }
+  .header h3 {
+    margin-bottom: 3rem;
+  }
+  .btn-primary {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.99px) {
+  .header {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+  .header h3 {
+    margin-bottom: 1.75rem;
+  }
 }
