@@ -31,6 +31,11 @@ h3 {
   font-size: 2.8125rem;
 }
 
+h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 p {
   line-height: 26px;
 }
@@ -42,7 +47,6 @@ button {
 main section {
   margin-bottom: 8.125rem;
 }
-
 /* shared styles */
 .container {
   max-width: 1440px;
@@ -163,34 +167,84 @@ nav a:hover {
   border-radius: 8px;
 }
 
+.features {
+  gap: 9rem;
+}
+
 .teams-content button {
   margin-top: 2rem;
 }
 
+.feature-description .common-title h3 {
+  border-left: 5px solid #ff900e;
+  padding-left: 1.3rem;
+}
+
+.feature-cards .card {
+  max-width: 580px;
+  margin-top: 1.875rem;
+  padding: 1.875rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 30px 0 rgba(0, 0, 0, 0.06);
+}
+
+.feature-cards .card h5 {
+  margin-bottom: 0.625rem;
+}
+.feature-img-wrap {
+  position: relative;
+}
+
+.feature-img-wrap img {
+  width: 100%;
+}
+
+.exp-badge {
+  display: inline-block;
+  padding: 2.625rem;
+  background: #ff900e;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-left: -100px;
+  margin-top: -130px;
+  line-height: 60%;
+  text-align: center;
+}
+.exp-badge span {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* facts styles */
+.achievements {
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 3rem;
+  column-gap: 7.75rem;
+  margin-top: 6.25rem;
+}
+.achievements .card {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ff900e;
+  border-radius: 8px;
+}
+
+.achievements .card h3 {
+  font-weight: 600;
+  margin: 0.8125rem 0 0.675rem;
+}
+
+.achievements .card h5 {
+  font-weight: 600;
+}
+
 /* media queries */
 /* mobile devices */
-
-@media screen and (max-width: 449.99px) {
-  :root {
-    font-size: 12px;
-  }
-  .header h3 {
-    margin-bottom: 3rem;
-  }
-  h1 {
-    font-size: 2.5rem;
-  }
-  h3 {
-    font-size: 1.75rem;
-  }
-  .btn-primary {
-    font-size: 1rem;
-  }
-  .header {
-    flex-direction: column;
-    padding: 2.5rem 0 1.5rem;
-  }
-}
 
 @media screen and (min-width: 450px) and (max-width: 575.99px) {
   :root {
@@ -214,16 +268,6 @@ nav a:hover {
   }
 }
 
-@media screen and (max-width: 575.99px) {
-  .teams {
-    flex-direction: column;
-  }
-  .teams-img-wrap {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem;
-  }
-}
-
 @media screen and (min-width: 576px) and (max-width: 767.99px) {
   .header {
     flex-direction: column;
@@ -237,12 +281,118 @@ nav a:hover {
 @media screen and (min-width: 768px) and (max-width: 991.99px) {
 }
 
+@media screen and (max-width: 1399.99px) {
+  .achievements {
+    column-gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 1199.99px) {
+  .features {
+    align-items: center;
+  }
+  .feature-img-wrap {
+    width: 50%;
+  }
+  .exp-badge {
+    font-size: 2.5rem;
+    line-height: 80%;
+    padding: 1.75rem;
+  }
+  .exp-badge span {
+    font-size: 1.125rem;
+  }
+  .achievements {
+    column-gap: 4rem;
+  }
+}
+
 @media screen and (max-width: 991.99px) {
+  main section {
+    margin-bottom: 6rem;
+  }
   .teams {
     flex-direction: column;
   }
   .teams-img-wrap {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+  }
+  .features {
+    flex-direction: column;
+    gap: 6rem;
+  }
+  .feature-img-wrap {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+  }
+  .feature-img-wrap img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .exp-badge {
+    margin-bottom: 100%;
+    margin-left: 16px;
+  }
+  .achievements {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6rem;
+    row-gap: 4rem;
+  }
+  .achievements .card h3 {
+    font-size: 2rem;
+  }
+  .achievements .card h5 {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 575.99px) {
+  .teams {
+    flex-direction: column;
+  }
+  .teams-img-wrap {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+  .features {
+    gap: 4rem;
+  }
+  .feature-img-wrap {
+    width: 100%;
+  }
+
+  .achievements {
+    padding: 0 10rem;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 449.99px) {
+  :root {
+    font-size: 12px;
+  }
+  .header h3 {
+    margin-bottom: 3rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  .btn-primary {
+    font-size: 1rem;
+  }
+  .header {
+    flex-direction: column;
+    padding: 2.5rem 0 1.5rem;
+  }
+  .achievements {
+    padding: 0 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
   }
 }
